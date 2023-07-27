@@ -1,0 +1,33 @@
+{% extends "components/index.html" %}
+
+{% block main %}
+<div class="bg-white text-secondary px-4 py-5 text-center border-bottom">
+    <div class="py-5">
+      <h1 class="display-5 fw-bold text-dark py-4">Prices for medical services</h1>
+      <div class="col-lg-7 mx-auto">
+        <p class="fs-4 mb-4">Get quality medical care quickly and affordably.</p>
+      </div>
+    </div>
+</div>
+
+<div class="bg-white px-4 py-5">
+    <div class="container d-flex justify-content-around flex-wrap gap-5">
+        {% for name, description, price in pricing %}
+        <div class="col flex-fill animated">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">{{name}}</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">${{price}}</h1>
+                <div class="col-lg-7">
+                    <p class="fs-5 mb-4">{{description}}</p>
+                </div>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Buy</button>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock main %}

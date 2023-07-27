@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damumed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">
+</head>
+<body class="d-flex flex-column h-100 bg-light" style="overflow-x: hidden;">
+
+    <!-- header -->
+    <div class="container">
+        <header class="d-flex justify-content-center py-3">
+          <ul class="nav nav-pills">
+            <li class="nav-item animated"><a href="http://127.0.0.1:8000/" class="nav-link {% if home_active %}{{home_active}}{% endif %}" aria-current="page">Home</a></li>
+            <li class="nav-item animated"><a href="http://127.0.0.1:8000/about" class="nav-link {% if about_active %}{{about_active}}{% endif %}">About</a></li>
+            <li class="nav-item animated"><a href="http://127.0.0.1:8000/pricing" class="nav-link {% if pricing_active %}{{pricing_active}}{% endif %}">Pricing</a></li>
+          </ul>
+        </header>
+      </div>
+    <!-- header -->
+
+    <!-- content -->
+    <main>
+        {% block main %}{% endblock main %}
+    </main>
+    <!-- content -->
+
+    <!-- footer -->
+    <div class="container">
+        <footer class="py-3 my-4">
+            <p class="text-center text-body-secondary border-bottom pb-3 mb-3">Quality health services</p>
+            <p class="text-center text-body-secondary">© 2023 Damumed</p>
+        </footer>
+    </div>
+    <!-- footer -->
+
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.js') }}"></script>
+</body>
+</html>

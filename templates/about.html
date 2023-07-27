@@ -1,0 +1,27 @@
+{% extends "components/index.html" %}
+
+{% block main %}
+<div class="bg-white text-secondary px-4 py-5 text-center border-bottom">
+    <div class="py-4">
+      <h1 class="display-5 fw-bold text-dark py-4">The best doctors in the country</h1>
+      <div class="col-lg-7 mx-auto">
+        <p class="fs-4 mb-4">These are the top three doctors in the entire country. They've been treating people their whole lives.</p>
+      </div>
+    </div>
+</div>
+
+<div class="bg-white px-4 py-5">
+    <div class="container d-flex justify-content-evenly">
+        {% for name, description in doctors %}
+        <div class="card animated" style="width: 20rem;">
+            <img class="card-img-top" src="{{ url_for('static', filename='src/avatar.png') }}" alt="image" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title">{{ name }}</h4>
+              <p class="card-text">{{ description }}</p>
+              <a href="" class="btn btn-primary">See Profile</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock main %}
